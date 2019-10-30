@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" xmlns="http://www.w3.org/1999/html"/>
+{% endblock %}
+{% block body %}
+    <div class="container mt-4">
+        <table class="table table-striped">
+            <tr>
+                <td>Property name :</td>
+                <td>
+                    <a href="{{ url('property.show', {id: contact.property.id, slug: contact.property.slug}) }}">{{ contact.property.title }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>First name</td>
+                <td>{{ contact.firstname }} m²</td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td>{{ contact.lastname }}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{ contact.phone }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td>{{ contact.message | nl2br }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
